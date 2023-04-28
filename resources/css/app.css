@@ -2,13 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    @apply antialiased;
-}
-
-div{
-    @apply bg-black;
-    h1{
-        @apply text-red-700;
+.custom-form{
+    @apply flex flex-col gap-y-3 max-w-[500px] mx-auto;
+    label{
+        @apply block;
     }
+    input{
+        @apply w-full;
+        &[type=text]{
+            @apply text-black;
+        }
+    }
+    .is-invalid{
+        @apply bg-red-300;
+    }
+}
+.custom-table{
+    @apply w-full text-sm text-left text-gray-500 dark:text-gray-400;
+    thead{
+        @apply text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400;
+        th{
+            @apply px-6 py-3;
+        }
+    }
+    tbody{
+        tr{
+            @apply bg-white border-b dark:bg-gray-800 dark:border-gray-700;
+        }
+        td{
+            @apply px-6 py-4;
+            &:last-child{
+                @apply  whitespace-nowrap;
+            }
+        }
+    }
+}
+.success{
+    @apply text-center text-xl;
+}
+.autoComplete_wrapper{
+    @apply w-full;
+}
+#autoComplete{
+    @apply rounded-none w-full h-[42px];
+    background-position: left 1.05rem top .6rem;
 }
